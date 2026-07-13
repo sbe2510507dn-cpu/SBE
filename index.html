@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>さばえのレッサーパンダ</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:"Yu Gothic","Hiragino Sans",sans-serif;
+    background:linear-gradient(#fff7ef,#ffe8d8,#fff7ef);
+    color:#5b3c2b;
+    line-height:1.8;
+}
+
+header{
+    background:linear-gradient(135deg,#ffb26b,#ff8b73);
+    color:white;
+    text-align:center;
+    padding:60px 20px;
+    border-bottom-left-radius:50px;
+    border-bottom-right-radius:50px;
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+}
+
+header h1{
+    font-size:3em;
+}
+
+header p{
+    margin-top:10px;
+    font-size:1.2em;
+}
+
+main{
+    width:90%;
+    max-width:1000px;
+    margin:auto;
+}
+
+section{
+    background:white;
+    margin:40px 0;
+    padding:30px;
+    border-radius:25px;
+    box-shadow:0 10px 20px rgba(0,0,0,.08);
+}
+
+h2{
+    color:#ff7b54;
+    margin-bottom:15px;
+}
+
+.hero{
+    text-align:center;
+    font-size:120px;
+    margin:30px 0;
+    animation:jump 2s infinite;
+}
+
+@keyframes jump{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-12px);}
+}
+
+.card-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:#fff3e8;
+    border-radius:20px;
+    padding:20px;
+    text-align:center;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px) scale(1.03);
+}
+
+.card span{
+    font-size:60px;
+}
+
+footer{
+    background:#ffb26b;
+    color:white;
+    text-align:center;
+    padding:25px;
+    margin-top:40px;
+    border-top-left-radius:40px;
+    border-top-right-radius:40px;
+}
+
+button{
+    margin-top:20px;
+    background:#ff7b54;
+    color:white;
+    border:none;
+    padding:12px 25px;
+    border-radius:30px;
+    font-size:16px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{
+    background:#ff5b3d;
+}
+
+#message{
+    margin-top:20px;
+    font-size:1.2em;
+    color:#d35400;
+    font-weight:bold;
+}
+</style>
+
+</head>
+<body>
+
+<header>
+    <h1>🦝 さばえのレッサーパンダ 🦝</h1>
+    <p>福井県鯖江市・西山動物園の人気者!</p>
+</header>
+
+<main>
+
+<div class="hero">🦝</div>
+
+<section>
+<h2>レッサーパンダって?</h2>
+<p>
+ふわふわのしっぽと、まんまるの顔がとてもかわいい動物です。
+木登りが得意で、のんびりした姿やごはんを食べる様子に癒されます。
+</p>
+</section>
+
+<section>
+<h2>鯖江市とレッサーパンダ</h2>
+<p>
+福井県鯖江市にある<strong>西山動物園</strong>は、日本でも有数のレッサーパンダの繁殖実績を持つ動物園です。
+園内には「レッサーパンダのいえ」があり、屋内・屋外の両方でレッサーパンダを観察できます。
+また、入園料が無料なので気軽に遊びに行けます。
+</p>
+</section>
+
+<section>
+<h2>かわいいポイント</h2>
+
+<div class="card-container">
+
+<div class="card">
+<span>🐾</span>
+<h3>ふわふわの足</h3>
+<p>短い足で歩く姿がとてもかわいい!</p>
+</div>
+
+<div class="card">
+<span>🌿</span>
+<h3>木登り名人</h3>
+<p>高い木もスイスイ登ります。</p>
+</div>
+
+<div class="card">
+<span>🍎</span>
+<h3>ごはんタイム</h3>
+<p>リンゴや竹の葉を食べる姿は大人気!</p>
+</div>
+
+<div class="card">
+<span>😴</span>
+<h3>お昼寝</h3>
+<p>丸くなって眠る姿に癒されます。</p>
+</div>
+
+</div>
+
+<button onclick="showMessage()">かわいさ発見!</button>
+<p id="message"></p>
+
+</section>
+
+</main>
+
+<footer>
+<p>🧡 また西山動物園でレッサーパンダに会いに行こう! 🧡</p>
+</footer>
+
+<script>
+function showMessage(){
+    const messages=[
+        "🦝 しっぽがふわふわ!",
+        "🍎 ごはんタイムは大人気!",
+        "🌳 木登りがとっても上手!",
+        "😊 今日もレッサーパンダはかわいい!",
+        "💕 鯖江市の人気者です!"
+    ];
+
+    document.getElementById("message").textContent=
+        messages[Math.floor(Math.random()*messages.length)];
+}
+</script>
+
+</body>
+</html>
